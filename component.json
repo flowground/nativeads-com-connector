@@ -1,0 +1,102 @@
+{
+    "title": "Native Ads Publisher",
+    "description": "This is a Native Ads Publisher API it provides same functionality as Native Ads Publisher Account GUI.\n",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/nativeads.com/1.0.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.nativeads.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "post_auth_default_login": {
+            "main": "./lib/actions/post_auth_default_login.js",
+            "title": "Returns Native Ads Publisher API token",
+            "description": "Returns Native Ads Publisher API token",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_auth_default_login.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_publisher_reports_daily": {
+            "main": "./lib/actions/get_publisher_reports_daily.js",
+            "title": "Returns publisher statistics split by date",
+            "description": "Returns publisher statistics split by date",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_publisher_reports_daily.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_publisher_reports_website": {
+            "main": "./lib/actions/get_publisher_reports_website.js",
+            "title": "Returns publisher statistics split by website",
+            "description": "Returns publisher statistics split by website",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_publisher_reports_website.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_publisher_reports_widget": {
+            "main": "./lib/actions/get_publisher_reports_widget.js",
+            "title": "Returns publisher statistics split by widget",
+            "description": "Returns publisher statistics split by widget",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_publisher_reports_widget.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "token": {
+            "required": true,
+            "type": "string"
+        },
+        "startDate": {
+            "required": true,
+            "type": "string",
+            "format": "date"
+        },
+        "endDate": {
+            "required": true,
+            "type": "string",
+            "format": "date"
+        },
+        "limit": {
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "default": 100
+        },
+        "page": {
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "default": 1
+        }
+    }
+}

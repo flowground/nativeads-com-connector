@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "type": "object",
+            "properties": {
+                "username": {
+                    "description": "Native Ads Publisher username",
+                    "type": "string"
+                },
+                "password": {
+                    "description": "Native Ads Publisher password",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "username"
+            ]
+        }
+    }
+}
